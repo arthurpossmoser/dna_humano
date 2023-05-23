@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estrutura.css">
+    <title>Estrutura & Funcionamento do DNA Humano</title>
+</head>
+<body>
+</head>
+<body id="body">
+    <div class="header" id="header">
+        <button onclick="toggleSidebar()" class="btn_icon_header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </button>
+        <div class="logo_header">
+            <img src="imgs/2890002.png" alt="logo DNA" class="img_logo_header">
+        </div>
+        <div class="navigation_header" id="navigation_header">
+            <button onclick="toggleSidebar()" class="btn_icon_header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </button>
+            <a href="index.html" class="active">Home</a>
+            <a href="composição.html">Composição</a>
+            <a href="estrutura.html">Estrutura</a>
+            <a href="funçao.html">Função</a>
+            <a href="Replicação.html">Replicação</a>
+            <a href="transcrição.html">Transcrição</a>
+            <a href="diferença entre dna e rna.html" class="dna__rna">Diferença entre DNA e RNA</a>
+        </div>
+    </div>
+    <div class="conteudo__est">
+        <h1 class="titulo__est">
+            Estrutura do DNA
+        </h1>
+        <p class="sub__est">
+            "O DNA é formado por duas cadeias de polinucleotídeos (fita), que são constituídas por vários nucleotídeos. Os nucleotídeos são unidos uns aos outros por ligações denominadas fosfodiéster (grupo fosfato ligando dois açúcares de dois nucleotídeos). Nessas ligações, um grupo fosfato conecta o carbono 3’ de um açúcar ao carbono 5’ do próximo açúcar.<br>
+            <br>
+            Essa junção dos nucleotídeos forma um padrão típico de repetição de unidade de açúcar-fosfato, que forma a cadeia principal. A essa cadeia principal estão ligadas as bases nitrogenadas."
+        </p>
+        <div class="imagem__est">
+            <img src="imgs/image (2).png" alt="dna" class="imagemv__est">
+        </div>
+        <div class="conteudo2__est">
+            <p class="sub2__est">
+                Ao observar as extremidades livres de uma cadeia de polinucleotídicos, é perceptível que, de um lado, temos um grupo fosfato ligado ao carbono 5' e, de outro, temos um grupo hidroxila ligado ao carbono 3'. Desse modo, temos duas extremidades em cada cadeia: a extremidade 5' e a extremidade 3'.<br>
+                <br>
+                As duas cadeias de polinucleotídios do DNA formam uma dupla-hélice. As cadeias principais estão localizadas na porção externa da hélice, já no interior são observadas as bases nitrogenadas que estão unidas por ligações de hidrogênio. As cadeias principais apresentam as direções 5’ → 3’ opostas, ou seja, uma cadeia está no sentido 5' → 3’, e a outra, no sentido 3' → 5’. Em razão dessa característica, dizemos que as fitas são antiparalelas.<br>
+                <br>
+                A união entre as bases nitrogenadas é que faz com que as duas cadeias fiquem unidas. Vale destacar que o pareamento ocorre entre bases complementares, sendo observada sempre a união de uma base pirimidina com uma base purina. O pareamento entre as bases só acontece das seguintes formas:<br>
+                <br>
+                <em>Adenina é pareada apenas com timina;</em><br>
+                <br>
+                <em>Guanina é pareada sempre com citosina.</em><br>
+                <br>
+                Como as bases são combinadas de maneira específica, podemos concluir que, na dupla-hélice, uma cadeia sempre será complementar à outra. Sendo assim, se uma cadeia apresentar a sequência de bases 5'-ACCGTCCA-3', teremos como cadeia complementar a sequência 3'-TGGCAGGT- 5'. Podemos concluir, portanto, que a quantidade de A é a mesma de T e a quantidade de G é a mesma que C.
+            </p>
+        </div>
+    </div>
+    <div tabindex="0" class="content" onfocus="closeSidebar()" id="content">
+    </div>
+</body>
+
+<script>
+    var header           = document.getElementById('header');
+    var navigationHeader = document.getElementById('navigation_header');
+    var content          = document.getElementById('content');
+    var showSidebar      = false;
+
+    function toggleSidebar()
+    {
+        showSidebar = !showSidebar;
+        if(showSidebar)
+        {
+            navigationHeader.style.marginLeft = '-10vw';
+            navigationHeader.style.animationName = 'showSidebar';
+            content.style.filter = 'blur(2px)';
+        }
+        else
+        {
+            navigationHeader.style.marginLeft = '-100vw';
+            navigationHeader.style.animationName = '';
+            content.style.filter = '';
+        }
+    }
+
+    function closeSidebar()
+    {
+        if(showSidebar)
+        {
+            showSidebar = true;
+            toggleSidebar();
+        }
+    }
+
+    window.addEventListener('resize', function(event) {
+        if(window.innerWidth > 768 && showSidebar) 
+        {  
+            showSidebar = true;
+            toggleSidebar();
+        }
+    });
+</script>
+
+</html>
+</body>
+</html>
